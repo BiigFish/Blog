@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
+  basePath: '/biigfish.github.io',
   distDir: 'docs',
   images: {
     unoptimized: true,
