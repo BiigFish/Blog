@@ -1,6 +1,8 @@
 import Button from '@/components/assets/Button';
 import Comments from '@/components/assets/Comments';
+import { getPostDate } from '@/util/date';
 import { getAllPosts, getPostBySlug } from '@/util/markdown';
+import { format } from 'date-fns';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
@@ -27,7 +29,7 @@ const BlogPostPage: React.FC<Props> = ({ post }) => {
 				<div className='prose mx-auto max-w-none'>
 					<div className='not-prose my-10'>
 						<h1 className='text-8xl font-bold'>{post.title}</h1>
-						<p className='text-lg'>{post.date}</p>
+						<p className='text-lg'>{getPostDate(post.date)}</p>
 						<p className='text-lg italic'>{post.description}</p>
 					</div>
 					<div dangerouslySetInnerHTML={{ __html: post.content }} />

@@ -1,6 +1,6 @@
 ---
 title: This is a title yes
-date: this is the date
+date: '2023-04-01'
 comments:
   - author: demon
     text: this is a test comment oh yeah

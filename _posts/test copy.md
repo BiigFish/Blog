@@ -1,6 +1,6 @@
 ---
 title: 'This is a title'
-date: 'this is the date'
+date: '2023-03-29'
 ---
 
 
