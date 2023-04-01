@@ -18,7 +18,7 @@ interface Params extends ParsedUrlQuery {
 const BlogPostPage: React.FC<Props> = ({ post }) => {
 	return (
 		<div className='m-4 '>
-			<div className='mx-auto w-text'>
+			<div className='mx-auto w-full md:w-text'>
 				<div className='mx-auto w-fit'>
 					<Link href='/'>
 						<h1 className='text-center text-4xl font-bold'>

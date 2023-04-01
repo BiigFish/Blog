@@ -16,7 +16,7 @@ export default function Home({ posts }: BlogIndexProps) {
   return (
     <>
       <Head>
-        <title>Plotless ThoughtsApp</title>
+        <title>Plotless Thoughts</title>
         <meta name="description" content="My ramblings for no apparent reason" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -24,7 +24,7 @@ export default function Home({ posts }: BlogIndexProps) {
       <main >
         <div className='m-4'>
         <div className='mx-auto max-w-md'>
-       <h1 className='text-4xl font-bold text-center'>Plotless Thoughts</h1>
+       <h1 className='text-4xl font-bold text-center mb-6'>Plotless Thoughts</h1>
        <Feed posts={posts} />
        </div>
        </div>
