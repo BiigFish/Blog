@@ -1,10 +1,18 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import Layout from '@/components/Layout'
+import { ReactElement } from 'react'
+import Feed from '@/components/home/Feed'
+import { getAllPosts } from '@/util/markdown'
+import { GetStaticProps } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+interface BlogIndexProps {
+  posts: BlogPost[];
+}
+
+export default function Home({ posts }: BlogIndexProps) {
   return (
     <>
       <Head>
@@ -14,8 +22,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-       <h1 className='text-red-500'>test</h1>
+        <div className='mx-auto max-w-sm'>
+       <h1 className='text-4xl font-bold text-center'>THE BLOG</h1>
+       <Feed posts={posts} />
+       </div>
       </main>
     </>
   )
 }
+
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+
+
+export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
+  const posts = getAllPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
