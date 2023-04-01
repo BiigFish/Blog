@@ -8,7 +8,7 @@ interface Props {
 
 const Posts: React.FC<Props> =({ posts }) => {
   return (
-    <div className='space-y-4'>
+    <div className='space-y-6'>
         {posts.map((post) => (
           <Link href={`/posts/${post.slug}`}key={post.slug}>
             <FeedItem title={post.title} date={post.date} />
